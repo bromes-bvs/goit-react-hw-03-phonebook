@@ -5,12 +5,31 @@ import Filter from './Filter/Filter';
 import ContactList from './ContactList/ContactList';
 import ContactForm from './ContactForm/ContactForm';
 import Wrapper from './Wrapper/Wrapper.styled';
+import { MainHeading, SecondaryHeading } from './Heading/Heading.styled';
+
+const LS_KEY = 'contacts';
 
 export class App extends Component {
   state = {
     contacts: initial,
     filter: '',
   };
+
+  componentDidMount() {
+    const parsedContacts = JSON.parse(localStorage.getItem(LS_KEY));
+    console.log(parsedContacts?.length);
+    if (parsedContacts?.length > 0) {
+      this.setState({ contacts: parsedContacts });
+    } else {
+      localStorage.setItem(LS_KEY, JSON.stringify(this.state.contacts));
+    }
+  }
+
+  componentDidUpdate(_, prevState) {
+    if (prevState.contacts !== this.state.contacts) {
+      localStorage.setItem(LS_KEY, JSON.stringify(this.state.contacts));
+    }
+  }
 
   handelSubmit = e => {
     e.preventDefault();
@@ -60,9 +79,9 @@ export class App extends Component {
     );
     return (
       <Wrapper>
-        <h1>Phonebook</h1>
+        <MainHeading>Phonebook</MainHeading>
         <ContactForm onSubmiting={this.handelSubmit} />
-        <h2>Contacts</h2>
+        <SecondaryHeading>Contacts</SecondaryHeading>
         <Filter value={this.state.filter} onChange={this.handleChange} />
         {visibleContacts.length !== 0 && (
           <ContactList

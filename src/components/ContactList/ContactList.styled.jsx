@@ -10,6 +10,7 @@ const StyledList = styled.ul`
   background-color: #6ed0f6;
 
   li {
+    font-family: 'Comfortaa', cursive;
     background-color: #089bcf;
     display: flex;
     align-items: center;
@@ -25,6 +26,7 @@ const StyledList = styled.ul`
       padding-right: 15px;
       height: 40px;
       font-size: 18px;
+      font-family: 'Comfortaa', cursive;
       color: #08408acc;
       background-color: #6ed0f6;
       font-weight: 600;

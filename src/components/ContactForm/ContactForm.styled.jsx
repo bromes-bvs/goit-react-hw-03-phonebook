@@ -11,6 +11,7 @@ const StyledContactForm = styled.form`
     display: flex;
     flex-direction: column;
     font-size: 18px;
+    font-family: 'Comfortaa', cursive;
     color: #313181a7;
     font-weight: 700;
     margin-bottom: 15px;
@@ -31,12 +32,13 @@ const StyledContactForm = styled.form`
     margin: 0 auto;
     text-align: center;
     border-radius: 8px;
-    width: 50%;
+    width: 100%;
     height: 40px;
     font-size: 18px;
     color: #0b6ef0cc;
     background-color: #5d8ece1d;
     font-weight: 600;
+    font-family: 'Comfortaa', cursive;
     border: 2px solid #0fc5e6;
 
     :hover,

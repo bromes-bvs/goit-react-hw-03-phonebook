@@ -5,8 +5,9 @@ const StyledFilter = styled.label`
   flex-direction: column;
   text-align: center;
   font-size: 22px;
+  font-family: 'Comfortaa', cursive;
   color: #1d1d36a7;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 15px;
 
   input {
